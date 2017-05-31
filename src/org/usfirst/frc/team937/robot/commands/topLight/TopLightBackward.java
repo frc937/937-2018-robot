@@ -5,28 +5,22 @@ import edu.wpi.first.wpilibj.command.Command;
 import org.usfirst.frc.team937.robot.Robot;
 import org.usfirst.frc.team937.robot.subsystems.TopLight;
 
-public class TopLightStop extends Command {
+public class TopLightBackward extends Command {
 	
-	private boolean isInterrupted = false;
-	
-    public TopLightStop() {
+    public TopLightBackward() {
         requires(Robot.TopLight);
     }
 
     protected void initialize() {
-    	setInterruptible(true);
-    	TopLight.Stop();
+    	setInterruptible(false);
+    	TopLight.SpinBackward();
     }
 
     protected void execute() {
-    	TopLight.Stop();
+    	TopLight.SpinBackward();
     }
     
     protected boolean isFinished() {
-        return isInterrupted || isCanceled();
-    }
-
-    protected void interrupted() {
-    	isInterrupted = true;
+        return isTimedOut() || isCanceled();
     }
 }

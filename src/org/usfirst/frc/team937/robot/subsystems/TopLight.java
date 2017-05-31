@@ -9,15 +9,15 @@ public class TopLight extends Subsystem {
 
 	private static Talon motor = new Talon(RobotMap.topLightPort);
 	
-    public static void spinForward() {
+    public static void SpinForward() {
     	motor.set(RobotMap.topLightPower);
     }
     
-    public static void spinBackward() {
+    public static void SpinBackward() {
     	motor.set(-RobotMap.topLightPower);
     }
 
-    public static void stop() {
+    public static void Stop() {
     	motor.set(0);
     }
     
