@@ -12,7 +12,7 @@ public class TopLightBackward extends Command {
     }
 
     protected void initialize() {
-    	setInterruptible(false);
+    	setInterruptible(true);
     	TopLight.SpinBackward();
     }
 
@@ -22,5 +22,9 @@ public class TopLightBackward extends Command {
     
     protected boolean isFinished() {
         return isTimedOut() || isCanceled();
+    }
+    
+    protected void end() {
+    	TopLight.Stop();
     }
 }
