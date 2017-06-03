@@ -13,7 +13,6 @@ public class TopLightBackward extends Command {
 
     protected void initialize() {
     	setInterruptible(true);
-    	TopLight.SpinBackward();
     }
 
     protected void execute() {

@@ -15,7 +15,6 @@ public class TopLightStop extends Command {
 
     protected void initialize() {
     	setInterruptible(true);
-    	TopLight.Stop();
     }
 
     protected void execute() {

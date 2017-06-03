@@ -13,7 +13,7 @@ public class Prefs {
 	public Prefs() {
 		preferences = Preferences.getInstance();
 		//get preferences
-		driverControllerPort = preferences.getInt("Driver Controller Port", 34);
+		driverControllerPort = preferences.getInt("Driver Controller Port", 0);
 		copilotControllerPort = preferences.getInt("Copilot Controller Port", 1);
 	}
 }

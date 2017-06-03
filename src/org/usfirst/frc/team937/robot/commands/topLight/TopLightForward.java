@@ -13,7 +13,6 @@ public class TopLightForward extends Command {
 
     protected void initialize() {
     	setInterruptible(true);
-    	TopLight.SpinForward();
     }
 
     protected void execute() {
