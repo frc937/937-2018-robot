@@ -7,33 +7,33 @@ import edu.wpi.first.wpilibj.Joystick;
 public class RawControllerValues {
 	
 	public boolean a;
-	public static boolean b;
-	public static boolean x;
-	public static boolean y;
-	public static boolean lb;
-	public static boolean rb;
-	public static boolean back;
-	public static boolean start;
-	public static boolean ls;
-	public static boolean rs;
-	public static boolean lt;
-	public static boolean rt;
+	public boolean b;
+	public boolean x;
+	public boolean y;
+	public boolean lb;
+	public boolean rb;
+	public boolean back;
+	public boolean start;
+	public boolean ls;
+	public boolean rs;
+	public boolean lt;
+	public boolean rt;
 	
-	public static boolean dpadUp;
-	public static boolean dpadRight;
-	public static boolean dpadDown;
-	public static boolean dpadLeft;
+	public boolean dpadUp;
+	public boolean dpadRight;
+	public boolean dpadDown;
+	public boolean dpadLeft;
 	
-	public static double dpadX;
-	public static double dpadY;
+	public double dpadX;
+	public double dpadY;
 	
-	public static double leftX;
-	public static double leftY;
-	public static double rightX;
-	public static double rightY;
+	public double leftX;
+	public double leftY;
+	public double rightX;
+	public double rightY;
 	
-	public static double ltAxis;
-	public static double rtAxis;
+	public double ltAxis;
+	public double rtAxis;
 	
 	public RawControllerValues(Joystick controller) {
 		//update buttons
