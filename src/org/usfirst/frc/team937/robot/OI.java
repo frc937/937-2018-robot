@@ -1,7 +1,6 @@
 package org.usfirst.frc.team937.robot;
 
 import org.usfirst.frc.team937.driverStation.Prefs;
-import org.usfirst.frc.team937.robot.commands.topLight.TopLightForward;
 
 import edu.wpi.first.wpilibj.Joystick;
 import edu.wpi.first.wpilibj.buttons.Button;
@@ -9,8 +8,8 @@ import edu.wpi.first.wpilibj.buttons.JoystickButton;
 
 public class OI {
 	
-	Joystick driverController = new Joystick(Prefs.driverControllerPort);
-	Joystick copilotController = new Joystick(Prefs.copilotControllerPort);
+	public static Joystick driverController = new Joystick(Prefs.driverControllerPort);
+	public static Joystick copilotController = new Joystick(Prefs.copilotControllerPort);
 	
 	Button  driverA     = new JoystickButton(driverController, RobotMap.controllerANumber),
 			driverB     = new JoystickButton(driverController, RobotMap.controllerBNumber),

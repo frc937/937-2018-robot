@@ -26,4 +26,8 @@ public class RobotMap {
 	
 	public static final int controllerLeftTrigger  = 2;
 	public static final int controllerRightTrigger = 3;
+	public static final double triggerPullThreshold = 0.7;
+	
+	
+	public static final int controllerPOVNumber = 0;
 }
