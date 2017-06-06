@@ -110,9 +110,9 @@ public class RawControllerValues {
 		
 		//update joystick values
 		leftX = controller.getRawAxis(RobotMap.controllerLeftXAxis);
-		leftY = controller.getRawAxis(RobotMap.controllerLeftYAxis);
+		leftY = -controller.getRawAxis(RobotMap.controllerLeftYAxis);
 		rightX = controller.getRawAxis(RobotMap.controllerRightXAxis);
-		rightY = controller.getRawAxis(RobotMap.controllerRightYAxis);
+		rightY = -controller.getRawAxis(RobotMap.controllerRightYAxis);
 		
 		//update trigger values
 		ltAxis = controller.getRawAxis(RobotMap.controllerLeftTrigger);

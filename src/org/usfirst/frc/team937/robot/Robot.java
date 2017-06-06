@@ -49,7 +49,7 @@ public class Robot extends IterativeRobot {
 		driverController = new RawControllerValues(OI.driverController);
 		copilotController = new RawControllerValues(OI.copilotController);
 		
-		SmartDashboard.putBoolean("a pressed", driverController.a);
+		SmartDashboard.putNumber("left stick", driverController.leftY);
 	}
 
 	public void testPeriodic() {
