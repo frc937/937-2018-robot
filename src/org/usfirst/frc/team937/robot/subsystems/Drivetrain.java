@@ -57,6 +57,11 @@ public class Drivetrain extends Subsystem {
     }
     
     public static void init() {
+    	leftMotor1.setSafetyEnabled(true);
+    	leftMotor2.setSafetyEnabled(true);
+    	rightMotor1.setSafetyEnabled(true);
+    	rightMotor2.setSafetyEnabled(true);
+    	
     	leftEncoder.setDistancePerPulse(RobotMap.drivetrainLeftEncoderDistancePerPulse);
     	leftEncoder.setReverseDirection(false);
     	rightEncoder.setDistancePerPulse(RobotMap.drivetrainRightEncoderDistancePerPulse);
