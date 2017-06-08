@@ -11,10 +11,10 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class Drivetrain extends Subsystem {
 
-    private static Talon leftMotor1 = new Talon(RobotMap.drivetrainleftMotorPort1);
-    private static Talon leftMotor2 = new Talon(RobotMap.drivetrainleftMotorPort2);
-    private static Talon rightMotor1 = new Talon(RobotMap.drivetrainRightMotorPort1);
-    private static Talon rightMotor2 = new Talon(RobotMap.drivetrainRightMotorPort2);
+    private static Talon leftMotor1 = new Talon(RobotMap.drivetrainleftMotor1Port);
+    private static Talon leftMotor2 = new Talon(RobotMap.drivetrainleftMotor2Port);
+    private static Talon rightMotor1 = new Talon(RobotMap.drivetrainRightMotor1Port);
+    private static Talon rightMotor2 = new Talon(RobotMap.drivetrainRightMotor2Port);
     
     private static Encoder leftEncoder = new Encoder(RobotMap.drivetrainLeftEncoderPort1,RobotMap.drivetrainLeftEncoderPort2);
     private static Encoder rightEncoder = new Encoder(RobotMap.drivetrainRightEncoderPort1,RobotMap.drivetrainRightEncoderPort2);

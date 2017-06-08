@@ -2,10 +2,15 @@ package org.usfirst.frc.team937.robot;
 
 public class RobotMap {
 	
-	public static final int drivetrainleftMotorPort1  = 0;
-	public static final int drivetrainleftMotorPort2  = 1;
-	public static final int drivetrainRightMotorPort1 = 2;
-	public static final int drivetrainRightMotorPort2 = 3;
+	public static final int drivetrainleftMotor1Port  = 0;
+	public static final int drivetrainleftMotor2Port  = 1;
+	public static final int drivetrainRightMotor1Port = 2;
+	public static final int drivetrainRightMotor2Port = 3;
+	
+	public static final int drivetrainLeftMotor1Channel = 15;
+	public static final int drivetrainLeftMotor2Channel = 14;
+	public static final int drivetrainRightMotor1Channel = 13;
+	public static final int drivetrainRightMotor2Channel = 12;
 	
 	public static final int drivetrainLeftEncoderPort1  = 0;
 	public static final int drivetrainLeftEncoderPort2  = 1;

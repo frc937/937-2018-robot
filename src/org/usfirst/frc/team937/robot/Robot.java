@@ -2,10 +2,7 @@
 package org.usfirst.frc.team937.robot;
 
 import edu.wpi.first.wpilibj.IterativeRobot;
-import edu.wpi.first.wpilibj.PowerDistributionPanel;
 import edu.wpi.first.wpilibj.command.Scheduler;
-import edu.wpi.first.wpilibj.hal.PDPJNI;
-import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 import org.usfirst.frc.team937.robot.commands.drivetrain.TankDrive;
 import org.usfirst.frc.team937.robot.subsystems.Drivetrain;
@@ -26,21 +23,18 @@ public class Robot extends IterativeRobot {
 	
 	public static TankDrive tankDrive;
 	
-	//public PowerDistributionPanel pdp;
+	public PDP pdp;
 	
 	public void robotInit() {
-		//groundwork
 		preferences = new Prefs();
 		oi = new OI();
-		//pdp = new PowerDistributionPanel();
-		
-		//subsystems
+		pdp = new PDP();
 		drivetrain = new Drivetrain();
 		topLight = new TopLight();
 		
-		//init subsystems
+		//init
+		pdp.init();
 		Drivetrain.init();
-		
 	}
 
 	public void disabledInit() {
@@ -69,7 +63,7 @@ public class Robot extends IterativeRobot {
 		
 		Drivetrain.updateSensors();
 		
-		//SmartDashboard.putNumber("volts", pdp.getVoltage());
+		pdp.updateValues();
 		
 		Scheduler.getInstance().run();
 	}
