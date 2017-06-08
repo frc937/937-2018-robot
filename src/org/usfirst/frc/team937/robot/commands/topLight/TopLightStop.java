@@ -7,10 +7,9 @@ import org.usfirst.frc.team937.robot.subsystems.TopLight;
 
 public class TopLightStop extends Command {
 	
-	private boolean isInterrupted = false;
 	
     public TopLightStop() {
-        requires(Robot.TopLight);
+        requires(Robot.topLight);
     }
 
     protected void initialize() {
@@ -22,10 +21,6 @@ public class TopLightStop extends Command {
     }
     
     protected boolean isFinished() {
-        return isInterrupted || isCanceled();
-    }
-
-    protected void interrupted() {
-    	isInterrupted = true;
+        return isCanceled();
     }
 }

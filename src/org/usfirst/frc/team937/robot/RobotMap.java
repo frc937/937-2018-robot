@@ -6,7 +6,7 @@ public class RobotMap {
 	public static final int drivetrainRightPort = 1;
 	
 	public static final int topLightPort     = 4;
-	public static final double topLightPower = 1;
+	public static final double topLightPower = 1.0;
 	
 	public static final int controllerANumber     = 1;
 	public static final int controllerBNumber     = 2;
@@ -24,8 +24,8 @@ public class RobotMap {
 	public static final int controllerRightXAxis = 4;
 	public static final int controllerRightYAxis = 5;
 	
-	public static final int controllerLeftTrigger  = 2;
-	public static final int controllerRightTrigger = 3;
+	public static final int controllerLeftTrigger   = 2;
+	public static final int controllerRightTrigger  = 3;
 	public static final double triggerPullThreshold = 0.7;
 	
 	

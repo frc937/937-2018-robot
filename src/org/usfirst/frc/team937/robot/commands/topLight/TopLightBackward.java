@@ -8,7 +8,7 @@ import org.usfirst.frc.team937.robot.subsystems.TopLight;
 public class TopLightBackward extends Command {
 	
     public TopLightBackward() {
-        requires(Robot.TopLight);
+        requires(Robot.topLight);
     }
 
     protected void initialize() {

@@ -4,33 +4,25 @@ import org.usfirst.frc.team937.robot.Robot;
 import org.usfirst.frc.team937.robot.subsystems.Drivetrain;
 
 import edu.wpi.first.wpilibj.command.Command;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 public class TankDrive extends Command {
-
-	private boolean isInterrupted = false;
 	
     public TankDrive() {
-    	requires(Robot.DriveTrain);
+    	requires(Robot.drivetrain);
     }
 
     protected void initialize() {
     	setInterruptible(true);
+    	SmartDashboard.putString("Drive Mode", "Tank Drive");
     }
 
     protected void execute() {
-    	Drivetrain.leftMotor(0);
-    	Drivetrain.rightMotor(0);
+    	Drivetrain.leftMotor(Robot.driverController.leftY);
+    	Drivetrain.rightMotor(Robot.driverController.rightY);
     }
 
     protected boolean isFinished() {
-        return isCanceled() || isInterrupted;
-    }
-
-    protected void end() {
-    	
-    }
-
-    protected void interrupted() {
-    	isInterrupted = true;
+        return isCanceled();
     }
 }

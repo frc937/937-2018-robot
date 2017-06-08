@@ -8,7 +8,7 @@ import org.usfirst.frc.team937.robot.subsystems.TopLight;
 public class TopLightForward extends Command {
 	
     public TopLightForward() {
-        requires(Robot.TopLight);
+        requires(Robot.topLight);
     }
 
     protected void initialize() {

@@ -23,4 +23,3 @@ public class Drivetrain extends Subsystem {
         setDefaultCommand(new TankDrive());
     }
 }
-
