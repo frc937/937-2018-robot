@@ -29,6 +29,8 @@ public class Robot extends IterativeRobot {
 		
 		drivetrain = new Drivetrain();
 		topLight = new TopLight();
+		
+		Drivetrain.init();
 	}
 
 	public void disabledInit() {
@@ -54,6 +56,8 @@ public class Robot extends IterativeRobot {
 	public void teleopPeriodic() {
 		driverController = new RawControllerValues(OI.driverController);
 		copilotController = new RawControllerValues(OI.copilotController);
+		
+		Drivetrain.updateSensors();
 		
 		Scheduler.getInstance().run();
 	}
