@@ -5,7 +5,9 @@ import org.usfirst.frc.team937.robot.subsystems.Drivetrain;
 import edu.wpi.first.wpilibj.command.Command;
 
 /**
- *
+ * turn the method resetMotors into a command
+ * <p>
+ * this makes is easy to add a button to the dashboard
  */
 public class ResetEncoders extends Command {
 
@@ -21,6 +23,7 @@ public class ResetEncoders extends Command {
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
+    	
     }
 
     // Make this return true when this Command no longer needs to run execute()
@@ -30,10 +33,12 @@ public class ResetEncoders extends Command {
 
     // Called once after isFinished returns true
     protected void end() {
+    	
     }
 
     // Called when another command which requires one or more of the same
     // subsystems is scheduled to run
     protected void interrupted() {
+    	
     }
 }

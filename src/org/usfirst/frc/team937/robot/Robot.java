@@ -9,9 +9,9 @@
 /*
  * A few notes:
  * I am going to comment this to a point of extreme overkill.
- * Anyone who knows how to program should bring their floaties so they don't drown in comments
  * This is so that anyone can just read this code, and use it.
  * That way not everyone has to suffer the same way I have reading through the WPI library documentation
+ * Anyone who knows how to program should bring their floaties so they don't drown in comments
  * 
  * Here is the link to the electronics and programming setup steps.
  * If this code is used after that link stops working please update it for future programmers.
