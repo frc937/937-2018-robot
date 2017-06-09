@@ -46,10 +46,10 @@ import org.usfirst.frc.team937.driverStation.RawControllerValues;
 public class Robot extends IterativeRobot {
 
    //declare global variables
+	public static Prefs preferences;
 	public static Drivetrain drivetrain;
 	public static TopLight topLight;
 	public static OI oi;
-	public static Prefs preferences;
 	
 	public static RawControllerValues driverController;
 	public static RawControllerValues copilotController;

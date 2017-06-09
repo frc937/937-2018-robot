@@ -17,9 +17,9 @@ import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 public class Drivetrain extends Subsystem {
 
 	/** motor 1 in left gearbox */
-    private static Talon leftMotor1 = new Talon(RobotMap.drivetrainleftMotor1Port);
+    private static Talon leftMotor1 = new Talon(RobotMap.drivetrainLeftMotor1Port);
     /** motor 2 in left gearbox */
-    private static Talon leftMotor2 = new Talon(RobotMap.drivetrainleftMotor2Port);
+    private static Talon leftMotor2 = new Talon(RobotMap.drivetrainLeftMotor2Port);
     /** motor 1 in right gearbox */
     private static Talon rightMotor1 = new Talon(RobotMap.drivetrainRightMotor1Port);
     /** motor 2 in right gearbox */
