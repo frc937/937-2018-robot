@@ -9,18 +9,15 @@
 /*
  * A few notes:
  * I am going to comment this to a point of extreme overkill.
+ * Anyone who knows how to program should bring their floaties so they don't drown in comments
  * This is so that anyone can just read this code, and use it.
  * That way not everyone has to suffer the same way I have reading through the WPI library documentation
- * 
- * I will also add an @hax in front of comments for people who know what they are doing
- * and an @noob in front of comments aimed at people who don't have much experience with this stuff.
  * 
  * Here is the link to the electronics and programming setup steps.
  * If this code is used after that link stops working please update it for future programmers.
  * http://wpilib.screenstepslive.com
  * 
- * @hax Here is the link to the WPI library API documentation
- * @noob this shows how all the robot-specific code works
+ * Here is the link to the WPI library API documentation
  * http://first.wpi.edu/frc/roborio/release/docs/java
  * 
  * Also, in case anyone tries any funny business with this code being their intellectual property
@@ -40,16 +37,15 @@ import org.usfirst.frc.team937.robot.subsystems.TopLight;
 import org.usfirst.frc.team937.driverStation.Prefs;
 import org.usfirst.frc.team937.driverStation.RawControllerValues;
 
-/*
- * Robot is the main class of the robot.
- * This is the base that everything else is run from
- * @hax it has the different methods that are called at self explanatory times
- * @noob this is where the different parts are run from
+/**
+ * Main robot class
+ * <p>
+ * This is the main file that the rest of the code is run from
  */
 
 public class Robot extends IterativeRobot {
 
-	//declare global variables
+   //declare global variables
 	public static Drivetrain drivetrain;
 	public static TopLight topLight;
 	public static OI oi;
@@ -60,42 +56,94 @@ public class Robot extends IterativeRobot {
 	
 	public PDP pdp;
 	
-	/*
-	 * 
+	/**
+	 * Initialize robot
+	 * <p>
+	 * This method is called once when the robot is turned on.
+	 * <p>
+	 * Code here will probably be for things like running all the startup methods
+	 * for the subsystems.
 	 */
-	
 	public void robotInit() {
+		//instantiate
 		preferences = new Prefs();
 		oi = new OI();
 		pdp = new PDP();
 		drivetrain = new Drivetrain();
 		topLight = new TopLight();
 		
-		//init
+		//initialize
 		pdp.init();
 		Drivetrain.init();
 	}
 
+	/**
+	 * Initialize disabled mode
+	 * <p>
+	 * This method is called once every time the robot is disabled
+	 * <p>
+	 * Code here will probably be to safely stop running robot tasks
+	 * so the robot doesn't eat itself alive
+	 */
 	public void disabledInit() {
 
 	}
 
+	/**
+	 * Run disabled mode tasks
+	 * <p>
+	 * This method is called over and over as long as the robot is disabled
+	 * <p>
+	 * I can't think of a reason why anyone would use this,
+	 * but it's still here anyway
+	 */
 	public void disabledPeriodic() {
 		
 	}
 
+	/**
+	 * Initialize autonomous
+	 * <p>
+	 * This method is called once at the beginning of the autonomous period
+	 * <p>
+	 * Code here will probably be to get the selected autonomous mode
+	 * then schedule it to run
+	 */
 	public void autonomousInit() {
 		
 	}
 
+	/**
+	 * Run autonomous tasks
+	 * <p>
+	 * This method is called over and over as long as the robot is in autonomous mode
+	 * <p>
+	 * Code in here will probably be mainly for the scheduler.
+	 * Because we are using a command based structure:
+	 * most of the code for autonomous should be in command groups
+	 */
 	public void autonomousPeriodic() {
 		
 	}
 
+	/**
+	 * Initialize teleoperated mode
+	 * <p>
+	 * This method is called once when user control is enabled
+	 * <p>
+	 * Code in here will probably be for stopping the autonomous
+	 */
 	public void teleopInit() {
 		
 	}
 
+	/**
+	 * Run teleoperated tasks
+	 * <p>
+	 * This method is called over and over while driver control is enabled
+	 * <p>
+	 * This will probably be the main area where the base methods are called from
+	 */
 	public void teleopPeriodic() {
 		driverController = new RawControllerValues(OI.driverController);
 		copilotController = new RawControllerValues(OI.copilotController);
@@ -107,10 +155,28 @@ public class Robot extends IterativeRobot {
 		Scheduler.getInstance().run();
 	}
 
+	/**
+	 * Initialize test mode
+	 * <p>
+	 * This method is called at the start of test mode
+	 * <p>
+	 * this is where you are supposed to test new code.
+	 * I would probably just start another branch on github for the test
+	 * that way we can get it later if we decide we want it
+	 */
 	public void testInit() {
 		
 	}
 	
+	/**
+	 * Run test mode tasks
+	 * <p>
+	 * This method is called over and over during test mode
+	 * <p>
+	 * this is where you are supposed to test new code.
+	 * I would probably just start another branch on github for the test
+	 * that way we can get it later if we decide we want it
+	 */
 	public void testPeriodic() {
 		
 	}

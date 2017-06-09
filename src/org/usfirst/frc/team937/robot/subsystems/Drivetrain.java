@@ -9,6 +9,11 @@ import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
+/**
+ * Drivetrain subsystem
+ * <p>
+ * most code for the drivetrain should be in here somewhere
+ */
 public class Drivetrain extends Subsystem {
 
     private static Talon leftMotor1 = new Talon(RobotMap.drivetrainleftMotor1Port);
