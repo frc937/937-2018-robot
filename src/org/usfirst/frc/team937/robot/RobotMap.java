@@ -1,5 +1,11 @@
 package org.usfirst.frc.team937.robot;
 
+/**
+ * this is where all the magic numbers are defined
+ * <p>
+ * a magic number is something plugged in as a parameter with no explanation of why
+ */
+
 public class RobotMap {
 	
 	public static int drivetrainLeftMotor1Port  = 0;

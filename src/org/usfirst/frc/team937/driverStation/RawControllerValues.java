@@ -4,6 +4,11 @@ import org.usfirst.frc.team937.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Joystick;
 
+/**
+ * Get current raw controller values
+ * <p>
+ * This does NOT get values as buttons, so you can't easily trigger a command with these values
+ */
 public class RawControllerValues {
 	
 	public boolean a;
