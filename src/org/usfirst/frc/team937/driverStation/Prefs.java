@@ -4,6 +4,10 @@ import org.usfirst.frc.team937.robot.RobotMap;
 
 import edu.wpi.first.wpilibj.Preferences;
 
+/**
+ * Read preferences from driver station
+ */
+
 public class Prefs {
 	
 	//declare preferences
@@ -18,10 +22,6 @@ public class Prefs {
 		//get controller preferences
 		driverControllerPort = preferences.getInt("Driver Controller Port", 0);
 		copilotControllerPort = preferences.getInt("Copilot Controller Port", 1);
-		
-		/*
-		 * electrical configuration
-		 */
 		
 		//drivetrain
 		RobotMap.drivetrainLeftMotor1Port = preferences.getInt("Left Motor 1 port", RobotMap.drivetrainLeftMotor1Port);
