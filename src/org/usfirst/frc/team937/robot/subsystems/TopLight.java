@@ -26,6 +26,11 @@ public class TopLight extends Subsystem {
     	motor.set(0);
     }
     
+    /** Update driver station values */
+    public static void DSUpdate() {
+        SmartDashboard.putNumber("Light Power",RobotMap.topLightPower);
+    }
+
     public void initDefaultCommand() {
     	
     }
