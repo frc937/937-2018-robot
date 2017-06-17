@@ -149,6 +149,8 @@ public class Robot extends IterativeRobot {
 		copilotController = new RawControllerValues(OI.copilotController);
 		
 		Drivetrain.updateSensors();
+
+        TopLight.DSUpdate();
 		
 		pdp.updateValues();
 		
