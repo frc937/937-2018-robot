@@ -37,6 +37,7 @@ import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
+import org.usfirst.frc.team937.robot.subsystems.Camera;
 import org.usfirst.frc.team937.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team937.robot.subsystems.TopLight;
 import org.opencv.core.Mat;
@@ -79,44 +80,12 @@ public class Robot extends IterativeRobot {
 		pdp = new PDP();
 		drivetrain = new Drivetrain();
 		topLight = new TopLight();
+		Camera frontCamera = new Camera();
+		Camera backCamera = new Camera();
 		
 		//initialize
 		pdp.init();
 		Drivetrain.init();
-		
-		new Thread(() -> {
-            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-            camera.setFPS(30);
-            camera.setResolution(640, 480);
-            CvSink cvSink = CameraServer.getInstance().getVideo();
-            CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
-            
-            Mat source = new Mat();
-            Mat output = new Mat();
-            
-            while(!Thread.interrupted()) {
-                cvSink.grabFrame(source);
-                Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-                outputStream.putFrame(output);
-            }
-        }).start();
-		
-		new Thread(() -> {
-            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
-            camera.setFPS(30);
-            camera.setResolution(640, 480);
-            CvSink cvSink = CameraServer.getInstance().getVideo();
-            CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
-            
-            Mat source = new Mat();
-            Mat output = new Mat();
-            
-            while(!Thread.interrupted()) {
-                cvSink.grabFrame(source);
-                Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
-                outputStream.putFrame(output);
-            }
-        }).start();
 	}
 
 	/**
