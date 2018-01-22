@@ -4,6 +4,7 @@ import org.usfirst.frc.team937.robot.RobotMap;
 import org.usfirst.frc.team937.robot.commands.drivetrain.ResetEncoders;
 import org.usfirst.frc.team937.robot.commands.drivetrain.TankDrive;
 import org.usfirst.frc.team937.robot.commands.drivetrain.GhettoDrive;
+import org.usfirst.frc.team937.robot.commands.drivetrain.JoystickDrive;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
@@ -30,6 +31,7 @@ public class Drivetrain extends Subsystem {
     private static Encoder leftEncoder = new Encoder(RobotMap.drivetrainLeftEncoderPort1,RobotMap.drivetrainLeftEncoderPort2);
     /** drivetrain right side encoder */
     private static Encoder rightEncoder = new Encoder(RobotMap.drivetrainRightEncoderPort1,RobotMap.drivetrainRightEncoderPort2);
+    
     
     /**
      * power left gearbox motors
@@ -119,6 +121,18 @@ public class Drivetrain extends Subsystem {
     }
     
     public void initDefaultCommand() {
-        setDefaultCommand(new TankDrive());
+        switch (RobotMap.driveMode) {
+        case 0:
+        	setDefaultCommand(new TankDrive());
+        break;
+        case 1: 
+        	setDefaultCommand(new GhettoDrive());
+        break;
+        case 2:
+        	setDefaultCommand(new JoystickDrive());
+        break;
+        default:
+        	setDefaultCommand(new TankDrive());
+        }
     }
 }

@@ -7,13 +7,13 @@ import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
- * Ghetto drive control mode
+ * Joystick drive control mode
  * <p>
- * The same drive mode as Grand Theft Auto and most racing games.
+ * The classic joystick controlled drive
  */
-public class GhettoDrive extends Command {
+public class JoystickDrive extends Command {
 	
-    public GhettoDrive() {
+    public JoystickDrive() {
     	// Use requires() here to declare subsystem dependencies
     	requires(Robot.drivetrain);
     }
@@ -21,13 +21,13 @@ public class GhettoDrive extends Command {
      // Called just before this Command runs the first time
     protected void initialize() {
     	setInterruptible(true);
-    	SmartDashboard.putString("Drive Mode", "Ghetto Drive");
+    	SmartDashboard.putString("Drive Mode", "Joystick Drive");
     }
 
     // Called repeatedly when this Command is scheduled to run
     protected void execute() {
     	//run motors
-    	double forwardComponent = Robot.driverController.rtAxis - Robot.driverController.ltAxis;
+    	double forwardComponent = Robot.driverController.leftY;
     	Drivetrain.leftMotor(forwardComponent + Robot.driverController.leftX);
     	Drivetrain.rightMotor(forwardComponent - Robot.driverController.leftX);
     }

@@ -17,38 +17,8 @@ public abstract class Camera extends Subsystem {
 	
     public static void init() {
     	
-    	//server = CameraServer.getInstance();
-    	//server.setQuality(50);
-    	//server.startAutomaticCapture("cam0");
     	
     	
-    	//Robot.visionThread.setDaemon(true);
-		//Robot.visionThread.start();
     }
     
-    /*public static Runnable thread() {
-    	
-    	//camera setup
-    	AxisCamera camera = CameraServer.getInstance().addAxisCamera(RobotMap.cameraIP);
-    	camera.setResolution(640, 480);
-    	
-    	//get camera video
-    	CvSink cvSink = CameraServer.getInstance().getVideo();
-    	
-    	//display video
-    	CvSource outputStream = CameraServer.getInstance().putVideo("Rectangle", 640, 480);
-    	Mat mat = new Mat();
-    	while (!Thread.interrupted()) {
-    		if (cvSink.grabFrame(mat) == 0) {
-    			outputStream.notifyError(cvSink.getError());
-    			continue;
-    		}
-    		outputStream.putFrame(mat);
-    	}
-		return null;
-    }
-    
-    public void initDefaultCommand() {
-    	
-    }*/
 }

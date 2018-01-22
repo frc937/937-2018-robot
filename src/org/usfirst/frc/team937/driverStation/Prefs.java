@@ -34,6 +34,8 @@ public class Prefs {
 		RobotMap.drivetrainRightEncoderPort1 = preferences.getInt("Right Enc port 1", RobotMap.drivetrainRightEncoderPort1);
 		RobotMap.drivetrainRightEncoderPort2 = preferences.getInt("Right Enc port 2", RobotMap.drivetrainRightEncoderPort2);
 		
+		RobotMap.driveMode = preferences.getInt("Drive Mode", RobotMap.driveMode);
+		
 		//top light
 		RobotMap.topLightPort = preferences.getInt("Top Light Port", RobotMap.topLightPort);
 	}
