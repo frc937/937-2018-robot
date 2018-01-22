@@ -15,7 +15,7 @@ public class PDP extends PowerDistributionPanel {
 	public double topLightCurrent;
 	
 	public void init() {
-		this.clearStickyFaults();
+		//this.clearStickyFaults();
 	}
 
 	/**
@@ -24,13 +24,11 @@ public class PDP extends PowerDistributionPanel {
 	 * just like the name says
 	 */
 	public void updateValues() {
-		SmartDashboard.putNumber("PDP volts", this.getVoltage());
-		SmartDashboard.putNumber("PDP Current", this.getTotalCurrent());
-		
 		leftMotor1Current = this.getCurrent(RobotMap.drivetrainLeftMotor1PDPChannel);
 		leftMotor2Current = this.getCurrent(RobotMap.drivetrainLeftMotor2PDPChannel);
 		rightMotor1Current = this.getCurrent(RobotMap.drivetrainLeftMotor1PDPChannel);
 		rightMotor2Current = this.getCurrent(RobotMap.drivetrainLeftMotor2PDPChannel);
 		topLightCurrent = this.getCurrent(RobotMap.topLightPDPChannel);
+		
 	}
 }

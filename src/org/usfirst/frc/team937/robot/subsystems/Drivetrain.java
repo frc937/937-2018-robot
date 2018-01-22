@@ -3,6 +3,7 @@ package org.usfirst.frc.team937.robot.subsystems;
 import org.usfirst.frc.team937.robot.RobotMap;
 import org.usfirst.frc.team937.robot.commands.drivetrain.ResetEncoders;
 import org.usfirst.frc.team937.robot.commands.drivetrain.TankDrive;
+import org.usfirst.frc.team937.robot.commands.drivetrain.GhettoDrive;
 
 import edu.wpi.first.wpilibj.Encoder;
 import edu.wpi.first.wpilibj.Talon;
@@ -107,10 +108,14 @@ public class Drivetrain extends Subsystem {
     
     /** initialize drivetrain stuff */
     public static void init() {
+    	leftMotor1.setInverted(false);
+    	leftMotor2.setInverted(false);
+    	rightMotor1.setInverted(true);
+    	rightMotor2.setInverted(true);
     	leftEncoder.setDistancePerPulse(RobotMap.drivetrainLeftEncoderDistancePerPulse);
     	leftEncoder.setReverseDirection(false);
     	rightEncoder.setDistancePerPulse(RobotMap.drivetrainRightEncoderDistancePerPulse);
-    	rightEncoder.setReverseDirection(false);
+    	rightEncoder.setReverseDirection(true);
     }
     
     public void initDefaultCommand() {

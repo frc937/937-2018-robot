@@ -1,5 +1,6 @@
 /*
- * Asimov's laws
+
+ * Asimov's laws 
  * 
  * 1: A robot must not injure a human being or, through inaction, allow a human being to come to harm.
  * 2: A robot must obey orders given it by human beings except where such orders would conflict with the first law.
@@ -29,11 +30,17 @@
 
 package org.usfirst.frc.team937.robot;
 
+import edu.wpi.cscore.CvSink;
+import edu.wpi.cscore.CvSource;
+import edu.wpi.cscore.UsbCamera;
+import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
 import org.usfirst.frc.team937.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team937.robot.subsystems.TopLight;
+import org.opencv.core.Mat;
+import org.opencv.imgproc.Imgproc;
 import org.usfirst.frc.team937.driverStation.Prefs;
 import org.usfirst.frc.team937.driverStation.RawControllerValues;
 
@@ -56,6 +63,7 @@ public class Robot extends IterativeRobot {
 	
 	public PDP pdp;
 	
+	
 	/**
 	 * Initialize robot
 	 * <p>
@@ -75,6 +83,40 @@ public class Robot extends IterativeRobot {
 		//initialize
 		pdp.init();
 		Drivetrain.init();
+		
+		new Thread(() -> {
+            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+            camera.setFPS(30);
+            camera.setResolution(640, 480);
+            CvSink cvSink = CameraServer.getInstance().getVideo();
+            CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+            
+            Mat source = new Mat();
+            Mat output = new Mat();
+            
+            while(!Thread.interrupted()) {
+                cvSink.grabFrame(source);
+                Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
+                outputStream.putFrame(output);
+            }
+        }).start();
+		
+		new Thread(() -> {
+            UsbCamera camera = CameraServer.getInstance().startAutomaticCapture();
+            camera.setFPS(30);
+            camera.setResolution(640, 480);
+            CvSink cvSink = CameraServer.getInstance().getVideo();
+            CvSource outputStream = CameraServer.getInstance().putVideo("Blur", 640, 480);
+            
+            Mat source = new Mat();
+            Mat output = new Mat();
+            
+            while(!Thread.interrupted()) {
+                cvSink.grabFrame(source);
+                Imgproc.cvtColor(source, output, Imgproc.COLOR_BGR2GRAY);
+                outputStream.putFrame(output);
+            }
+        }).start();
 	}
 
 	/**
@@ -113,6 +155,8 @@ public class Robot extends IterativeRobot {
 		
 	}
 
+	
+    	
 	/**
 	 * Run autonomous tasks
 	 * <p>
@@ -126,6 +170,9 @@ public class Robot extends IterativeRobot {
 		
 	}
 
+	
+	
+	
 	/**
 	 * Initialize teleoperated mode
 	 * <p>
@@ -146,11 +193,13 @@ public class Robot extends IterativeRobot {
 	 */
 	public void teleopPeriodic() {
 		driverController = new RawControllerValues(OI.driverController);
-		copilotController = new RawControllerValues(OI.copilotController);
+		//copilotController = new RawControllerValues(OI.copilotController);
 		
 		Drivetrain.updateSensors();
 
         TopLight.DSUpdate();
+		
+		TopLight.update();
 		
 		pdp.updateValues();
 		
@@ -163,7 +212,7 @@ public class Robot extends IterativeRobot {
 	 * This method is called at the start of test mode
 	 * <p>
 	 * this is where you are supposed to test new code.
-	 * I would probably just start another branch on github for the test
+	 * I would probably nigger just start another branch on github for the test
 	 * that way we can get it later if we decide we want it
 	 */
 	public void testInit() {

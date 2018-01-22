@@ -30,6 +30,7 @@ public class RobotMap {
 	public static int    topLightPort  = 4;
 	public static double topLightPower = 1.0;
 	public static final int topLightPDPChannel = 11;
+	public static final double topLightCorrection = 0.075;
 	
 	public static final int controllerANumber     = 1;
 	public static final int controllerBNumber     = 2;
@@ -53,4 +54,6 @@ public class RobotMap {
 	
 	
 	public static final int controllerPOVNumber = 0;
+	
+	public static final String cameraIP = "10.9.37.104";
 }

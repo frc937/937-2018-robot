@@ -2,6 +2,8 @@ package org.usfirst.frc.team937.robot.subsystems;
 
 import edu.wpi.first.wpilibj.*;
 import edu.wpi.first.wpilibj.command.Subsystem;
+
+import org.usfirst.frc.team937.robot.Robot;
 import org.usfirst.frc.team937.robot.RobotMap;
 
 /**
@@ -34,4 +36,9 @@ public class TopLight extends Subsystem {
     public void initDefaultCommand() {
     	
     }
+
+	public static void update() {
+		final double power = Robot.driverController.rtAxis - Robot.driverController.ltAxis - RobotMap.topLightCorrection;
+		TopLight.motor.set(power);
+	}
 }
