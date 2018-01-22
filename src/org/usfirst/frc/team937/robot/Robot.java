@@ -80,8 +80,8 @@ public class Robot extends IterativeRobot {
 		pdp = new PDP();
 		drivetrain = new Drivetrain();
 		topLight = new TopLight();
-		Camera frontCamera = new Camera();
-		Camera backCamera = new Camera();
+		Camera frontCamera = new Camera("Front");
+		Camera backCamera = new Camera("Back");
 		
 		//initialize
 		pdp.init();
