@@ -51,14 +51,14 @@ public class PID {
     /**
     * @return position component
     */
-    public double p(double actual) {
+    public double getP(double actual) {
         return Pmultiplier * (target - actual);
     }
 
     /**
     * @return integral component
     */
-    public double i(double actual) {
+    public double getI(double actual) {
         integral += target - actual;
         return Imultiplier * integral;
     }
@@ -66,12 +66,12 @@ public class PID {
     /**
     * @return derivative component
     */
-    public double d(double actual) {
+    public double getD(double actual) {
         double newError = target - actual;
         double diff = newError - lastError;
         lastError = newError;
         return Dmultiplier * newError;
     }
 
-    
+
 }
