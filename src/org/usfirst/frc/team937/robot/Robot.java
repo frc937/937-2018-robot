@@ -37,7 +37,7 @@ import edu.wpi.first.wpilibj.CameraServer;
 import edu.wpi.first.wpilibj.IterativeRobot;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
-import org.usfirst.frc.team937.robot.Camera;
+import org.usfirst.frc.team937.utility.Camera;
 import org.usfirst.frc.team937.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team937.robot.subsystems.TopLight;
 import org.opencv.core.Mat;
