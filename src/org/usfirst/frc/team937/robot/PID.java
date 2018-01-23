@@ -73,5 +73,32 @@ public class PID {
         return Dmultiplier * newError;
     }
 
+    /**
+    * @return PI controller
+    */
+    public double getPI(double actual) {
+        return getP(actual) + getI(actual);
+    }
 
+    /**
+    * @return PD controller
+    */
+    public double getPD(double actual) {
+        return getP(actual) + getD(actual);
+    }
+
+    /**
+    * @return ID controller
+    */
+    public double geID(double actual) {
+        return getI(actual) + getD(actual);
+    }
+
+    /**
+    * @return PID controller
+    */
+    public double getPID(double actual) {
+        return getP(actual) + getI(actual) + getD(actual);
+    }
+    
 }
