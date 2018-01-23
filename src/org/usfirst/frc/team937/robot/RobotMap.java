@@ -55,4 +55,11 @@ public class RobotMap {
 	public static int driveMode = 0;
 	
 	public static final int controllerPOVNumber = 0;
+
+	public static final double inchesPerWheelRotation       = 1.0;
+	public static final double inchesPerSwingTurnDegree     = 1.0;
+	public static final double inchesPerPivotTurnDegree     = 1.0;
+
+	public static final double leftEncoderTicksPerRotation  = 100.0;
+	public static final double rightEncoderTicksPerRotation = 100.0;
 }
