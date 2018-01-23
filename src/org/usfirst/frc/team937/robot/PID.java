@@ -9,6 +9,7 @@ import edu.wpi.first.wpilibj.*;
  */
 public class PID {
 
+    private double target = 0.0;
     private double integeral = 0.0;
     private double lastError = 0.0;
 
@@ -40,9 +41,37 @@ public class PID {
         Dmultiplier = d;
     }
 
+    /**
+    * sets target position
+    */
+    public void setTarget(double target) {
+        this.target = target;
+    }
 
+    /**
+    * @return position component
+    */
+    public double p(double actual) {
+        return Pmultiplier * (target - actual);
+    }
 
+    /**
+    * @return integral component
+    */
+    public double i(double actual) {
+        integral += target - actual;
+        return Imultiplier * integral;
+    }
 
+    /**
+    * @return derivative component
+    */
+    public double d(double actual) {
+        double newError = target - actual;
+        double diff = newError - lastError;
+        lastError = newError;
+        return Dmultiplier * newError;
+    }
 
     
 }
