@@ -1,7 +1,5 @@
 package org.usfirst.frc.team937.robot;
 
-import edu.wpi.first.wpilibj.*;
-
 /**
  * PID class
  * <p>
@@ -100,5 +98,5 @@ public class PID {
     public double getPID(double actual) {
         return getP(actual) + getI(actual) + getD(actual);
     }
-    
+
 }
