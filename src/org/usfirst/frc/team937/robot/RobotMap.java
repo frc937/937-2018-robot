@@ -55,6 +55,4 @@ public class RobotMap {
 	public static int driveMode = 0;
 	
 	public static final int controllerPOVNumber = 0;
-	
-	public static final String cameraIP = "10.9.37.104";
 }
