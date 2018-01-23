@@ -48,7 +48,7 @@ public class OI {
 	public static Joystick driverController = new Joystick(Prefs.driverControllerPort);
 	public static Joystick copilotController = new Joystick(Prefs.copilotControllerPort);
 	
-	Button  driverA     = new JoystickButton(driverController, RobotMap.controllerANumber),
+	Button  driverA = new JoystickButton(driverController, RobotMap.controllerANumber),
 			driverB     = new JoystickButton(driverController, RobotMap.controllerBNumber),
 			driverX     = new JoystickButton(driverController, RobotMap.controllerXNumber),
 			driverY     = new JoystickButton(driverController, RobotMap.controllerYNumber),
@@ -59,7 +59,7 @@ public class OI {
 			driverLS    = new JoystickButton(driverController, RobotMap.controllerLSNumber),
 			driverRS    = new JoystickButton(driverController, RobotMap.controllerRSNumber);
 	
-	Button  copilotA     = new JoystickButton(copilotController, RobotMap.controllerANumber),
+	Button  copilotA = new JoystickButton(copilotController, RobotMap.controllerANumber),
 			copilotB     = new JoystickButton(copilotController, RobotMap.controllerBNumber),
 			copilotX     = new JoystickButton(copilotController, RobotMap.controllerXNumber),
 			copilotY     = new JoystickButton(copilotController, RobotMap.controllerYNumber),
