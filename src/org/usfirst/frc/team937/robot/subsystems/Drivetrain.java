@@ -21,11 +21,11 @@ public class Drivetrain extends Subsystem {
 	/** motor 1 in left gearbox */
     private static Talon leftMotor1 = new Talon(RobotMap.drivetrainLeftMotor1Port);
     /** motor 2 in left gearbox */
-    private static Talon leftMotor2 = new Talon(RobotMap.drivetrainLeftMotor2Port);
+    //private static Talon leftMotor2 = new Talon(RobotMap.drivetrainLeftMotor2Port);
     /** motor 1 in right gearbox */
     private static Talon rightMotor1 = new Talon(RobotMap.drivetrainRightMotor1Port);
     /** motor 2 in right gearbox */
-    private static Talon rightMotor2 = new Talon(RobotMap.drivetrainRightMotor2Port);
+    //private static Talon rightMotor2 = new Talon(RobotMap.drivetrainRightMotor2Port);
     
     /** drivetrain left side encoder */
     private static Encoder leftEncoder = new Encoder(RobotMap.drivetrainLeftEncoderPort1,RobotMap.drivetrainLeftEncoderPort2);
@@ -43,7 +43,7 @@ public class Drivetrain extends Subsystem {
      */
     public static void leftMotor(double power) {
     	leftMotor1.set(power);
-    	leftMotor2.set(power);
+    	//leftMotor2.set(power);
     }
     
     /**
@@ -55,8 +55,8 @@ public class Drivetrain extends Subsystem {
      * a decimal between -1 and 1 inclusive
      */
     public static void rightMotor(double power) {
-    	rightMotor1.set(power);
-    	rightMotor2.set(power);
+    	rightMotor1.set(power + 0.1);
+    	//rightMotor2.set(power);
     }
     
     /**
@@ -111,9 +111,9 @@ public class Drivetrain extends Subsystem {
     /** initialize drivetrain stuff */
     public static void init() {
     	leftMotor1.setInverted(false);
-    	leftMotor2.setInverted(false);
+    	//leftMotor2.setInverted(false);
     	rightMotor1.setInverted(true);
-    	rightMotor2.setInverted(true);
+    	//rightMotor2.setInverted(true);
     	leftEncoder.setDistancePerPulse(RobotMap.drivetrainLeftEncoderDistancePerPulse);
     	leftEncoder.setReverseDirection(false);
     	rightEncoder.setDistancePerPulse(RobotMap.drivetrainRightEncoderDistancePerPulse);

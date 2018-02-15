@@ -30,18 +30,16 @@
 
 package org.usfirst.frc.team937.robot;
 
-import edu.wpi.cscore.CvSink;
-import edu.wpi.cscore.CvSource;
-import edu.wpi.cscore.UsbCamera;
-import edu.wpi.first.wpilibj.CameraServer;
+
+
 import edu.wpi.first.wpilibj.IterativeRobot;
+import edu.wpi.first.wpilibj.Talon;
 import edu.wpi.first.wpilibj.command.Scheduler;
 
-import org.usfirst.frc.team937.utility.Camera;
+import org.usfirst.frc.team937.robot.subsystems.Camera;
 import org.usfirst.frc.team937.robot.subsystems.Drivetrain;
 import org.usfirst.frc.team937.robot.subsystems.TopLight;
-import org.opencv.core.Mat;
-import org.opencv.imgproc.Imgproc;
+
 import org.usfirst.frc.team937.driverStation.Prefs;
 import org.usfirst.frc.team937.driverStation.RawControllerValues;
 
@@ -63,13 +61,15 @@ public class Robot extends IterativeRobot {
 	public static RawControllerValues copilotController;
 	
 	public PDP pdp;
+	private Talon lift;
+	private Talon claw;
 	
 	
 	/**
 	 * Initialize robot
 	 * <p>
-	 * This method is called once when the robot is turned on.
 	 * <p>
+	 * This method is called once when the robot is turned on.
 	 * Code here will probably be for things like running all the startup methods
 	 * for the subsystems.
 	 */
@@ -80,8 +80,11 @@ public class Robot extends IterativeRobot {
 		pdp = new PDP();
 		drivetrain = new Drivetrain();
 		topLight = new TopLight();
-		Camera frontCamera = new Camera("Front");
-		Camera backCamera = new Camera("Back");
+		new Camera("Front");
+		new Camera("Back");
+		
+		lift = new Talon(RobotMap.liftMotorPort);
+		claw = new Talon(RobotMap.clawMotorPort);
 		
 		//initialize
 		pdp.init();
@@ -173,6 +176,11 @@ public class Robot extends IterativeRobot {
 		pdp.updateValues();
 		
 		Scheduler.getInstance().run();
+		
+		lift.set(driverController.ltAxis - driverController.rtAxis);
+		if(driverController.rb) claw.set(1);
+		else if(driverController.lb) claw.set(-1);
+		else claw.set(0);
 	}
 
 	/**

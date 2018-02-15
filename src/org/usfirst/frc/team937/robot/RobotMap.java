@@ -9,14 +9,17 @@ package org.usfirst.frc.team937.robot;
 public class RobotMap {
 	
 	public static int drivetrainLeftMotor1Port  = 0;
-	public static int drivetrainLeftMotor2Port  = 1;
-	public static int drivetrainRightMotor1Port = 2;
-	public static int drivetrainRightMotor2Port = 3;
+	public static int drivetrainLeftMotor2Port  = 0;
+	public static int drivetrainRightMotor1Port = 1;
+	public static int drivetrainRightMotor2Port = 1;
 	
 	public static final int drivetrainLeftMotor1PDPChannel = 15;
 	public static final int drivetrainLeftMotor2PDPChannel = 14;
 	public static final int drivetrainRightMotor1PDPChannel = 13;
 	public static final int drivetrainRightMotor2PDPChannel = 12;
+	
+	public static final int liftMotorPort = 3;
+	public static final int clawMotorPort = 2;
 	
 	public static int drivetrainLeftEncoderPort1  = 0;
 	public static int drivetrainLeftEncoderPort2  = 1;
@@ -55,11 +58,6 @@ public class RobotMap {
 	public static int driveMode = 0;
 	
 	public static final int controllerPOVNumber = 0;
-
-	public static final double inchesPerWheelRotation       = 1.0;
-	public static final double inchesPerSwingTurnDegree     = 1.0;
-	public static final double inchesPerPivotTurnDegree     = 1.0;
-
-	public static final double leftEncoderTicksPerRotation  = 100.0;
-	public static final double rightEncoderTicksPerRotation = 100.0;
+	
+	public static final String cameraIP = "10.9.37.104";
 }
