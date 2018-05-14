@@ -189,7 +189,7 @@ public class Robot extends IterativeRobot {
 	 * This method is called at the start of test mode
 	 * <p>
 	 * this is where you are supposed to test new code.
-	 * I would probably nigger just start another branch on github for the test
+	 * I would probably just start another branch on github for the test
 	 * that way we can get it later if we decide we want it
 	 */
 	public void testInit() {
